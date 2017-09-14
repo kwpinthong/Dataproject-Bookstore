@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<title>Edit Staff</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+table.sortable thead {
+    color:#000000;
+    font-weight: Raleway;
+    cursor: default;}
+	
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+#myDIV {
+	display: none;
+    width: 97%;
+    padding: 50px 0;
+    text-align: center;
+    margin-top:20px;
+}
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<script>
+function myFunction1() {
+    var x = document.getElementById('myDIV');
+    if (x.style.display === 'block') {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'block';
+    }
+}
+</script>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="img/manager.jpg" style="width:45%;" class="w3-round"><br><br>
+    <h4><b>Edit Staff</b></h4>
+  </div>
+  <div class="w3-bar-block">
+    <a href="staffA.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-circle fa-fw w3-margin-right"></i>Back</a> 
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="img/manager.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>Edit Staff</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-10"></div>
+    </div>
+  </header>
+  
+	<center><div class="dropdown">
+		<button onclick="myFunction()" class="dropbtn">Edit Staff</button>
+		<div id="myDropdown" class="dropdown-content">
+		<a href="#" onclick="myFunction1()">staffA</a>
+		<a href="#about">staffB</a>
+		<a href="#contact">staffC</a>
+		<a href="#contact">staffD</a>
+		<a href="#contact">staffE</a>
+	</div>
+	</div><div id="myDIV">
+  <image src="img/staffA.jpg" style="width:50%">
+  <h3><a>Staff name</a></h3>
+  <a><input type=text name=user style="background-image:url(image/bg_pc_foot.gif)" placeholder="Staff A"></input></a>
+  <h3><a>ID</a></h3>
+  <a><input type=text name=user style="background-image:url(image/bg_pc_foot.gif)" placeholder="xxxxxxxxxxxxx"></input></a>
+  <br><br><button>DONE</button>
+  <br><br><button>FIRE!!!!</button>
+</div></center>
+	
